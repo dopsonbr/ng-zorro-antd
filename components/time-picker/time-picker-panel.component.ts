@@ -106,7 +106,7 @@ export type NzTimePickerUnit = 'hour' | 'minute' | 'second' | '12-hour';
       <div *ngIf="nzAddOn" class="ant-picker-footer-extra">
         <ng-template [ngTemplateOutlet]="nzAddOn"></ng-template>
       </div>
-      <ul class="ant-picker-ranges">
+      <ul *ngIf="nzAllowNowOption" class="ant-picker-ranges">
         <li class="ant-picker-now">
           <a (click)="onClickNow()">
             {{ 'Calendar.now' | nzI18n }}
@@ -166,6 +166,7 @@ export class NzTimePickerPanelComponent implements ControlValueAccessor, OnInit,
   @Input() nzPlaceHolder: string;
   @Input() @InputBoolean() nzUse12Hours = false;
   @Input() nzDefaultOpenValue: Date;
+  @Input() nzAllowNowOption: boolean = true;
   @Output() readonly closePanel = new EventEmitter<void>();
 
   @Input()

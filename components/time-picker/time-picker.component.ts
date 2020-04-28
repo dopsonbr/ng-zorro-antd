@@ -92,6 +92,7 @@ const NZ_CONFIG_COMPONENT_NAME = 'timePicker';
               [nzAddOn]="nzAddOn"
               [nzClearText]="nzClearText"
               [nzAllowEmpty]="nzAllowEmpty"
+              [nzAllowNowOption]="nzAllowNowOption"
               [(ngModel)]="value"
               (ngModelChange)="setValue($event)"
               (closePanel)="close()"
@@ -117,6 +118,7 @@ export class NzTimePickerComponent implements ControlValueAccessor, OnInit, Afte
   static ngAcceptInputType_nzUse12Hours: BooleanInput;
   static ngAcceptInputType_nzHideDisabledOptions: BooleanInput;
   static ngAcceptInputType_nzAllowEmpty: BooleanInput;
+  static ngAcceptInputType_nzAllowNowOption: BooleanInput;
   static ngAcceptInputType_nzDisabled: BooleanInput;
   static ngAcceptInputType_nzAutoFocus: BooleanInput;
 
@@ -162,6 +164,7 @@ export class NzTimePickerComponent implements ControlValueAccessor, OnInit, Afte
   @Input() @WithConfig(NZ_CONFIG_COMPONENT_NAME, true) @InputBoolean() nzAllowEmpty: boolean;
   @Input() @InputBoolean() nzDisabled = false;
   @Input() @InputBoolean() nzAutoFocus = false;
+  @Input() @InputBoolean() nzAllowNowOption = true;
 
   setValue(value: Date | null): void {
     this.value = value ? new Date(value) : null;

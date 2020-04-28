@@ -27,6 +27,7 @@ import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 | `[ngModel]` | to set time | `Date` | - |
 | `[nzAddon]` | called from timepicker panel to render some addon to its bottom | `TemplateRef<void>` | - |
 | `[nzAllowEmpty]` | allow clearing text | `boolean` | `true` | ✅ |
+| `[nzAllowNowOption]` | allow selecting now option | `boolean` | `true` | - |
 | `[nzAutoFocus]` | get focus when component mounted | `boolean` | `false` |
 | `[nzClearText]` | clear tooltip of icon | `string` | `'clear'` | ✅ |
 | `[nzDefaultOpenValue]` | default open panel value if `[ngModel]` is null | `Date` | `new Date()` |
